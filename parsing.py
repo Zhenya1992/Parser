@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 def get_hacker_news_title():
     url = "https://habr.com/ru/"
-    headers = {"User_Agent": "Mozilla/5.0"}
+    headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers)
 
     if response.status_code != 200:

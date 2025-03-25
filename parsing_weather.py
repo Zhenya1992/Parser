@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def get_weather_info():
-    url = "https://www.gismeteo.ru/weather-moscow-4368/"
+    url = "https://www.gismeteo.by/weather-mozyr-4916/"
     headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers)
 
