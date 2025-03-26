@@ -1,8 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def get_weather_info():
-    url = "https://www.gismeteo.by/weather-mozyr-4916/"
+    url = "https://www.gismeteo.by/weather-minsk-4248/"
     headers = {"User-Agent": "Mozilla/5.0"}
     response = requests.get(url, headers=headers)
 
@@ -27,14 +28,16 @@ def get_weather_info():
         "temperature": temperature,
     }
 
-def save_weather_info(weather_info, filename="weather_info.txt"):
+
+def save_weather_info(weather_info, filename="weather_info.md"):
     with open(filename, "w", encoding="utf-8") as file:
-        file.write(f"Город: {weather_info['city']}\n")
+        file.write(f"{weather_info['city']}\n")
         file.write(f"Температура: {weather_info['temperature']}°C\n")
     print(f"Информация о погоде сохранена в {filename}")
+
 
 if __name__ == "__main__":
     weather_info = get_weather_info()
     if weather_info:
-        save_weather_info(weather_info, "weather_info.txt")  # можешь в .md писать
+        save_weather_info(weather_info, "weather_info.md")  # можешь в .md писать
         print(weather_info)
